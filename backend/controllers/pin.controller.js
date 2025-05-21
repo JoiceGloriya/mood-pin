@@ -47,7 +47,7 @@ export const getPin = async (req, res) => {
     "user",
     "username img displayName" //for single-page, u gonna need these user data
   );
-
+console.log("Fetched Pin:", pin); 
   res.status(200).json(pin);
 };
 

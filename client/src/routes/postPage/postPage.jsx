@@ -7,7 +7,6 @@ import { useQuery } from "@tanstack/react-query";
 import apiRequest from "../../utils/apiRequest.js";
 
 const PostPage = () => {
-
   const { id } = useParams();
 
   const { isPending, error, data } = useQuery({
@@ -33,15 +32,29 @@ const PostPage = () => {
       </svg>
       <div className="postContainer">
         <div className="postImg">
-          <Image src={data.media} alt="Post Image" w={736} />
+          <Image path={data.media} alt="Post Image" w={736} />
         </div>
         <div className="postDetails">
-          <PostInteractions postId={id}/>
-          <Link to={`/${data.user.username}`} className="postUser">
-            <Image src={data.user.img || "/general/noAvatar.png"} />
-            <span>{data.user.displayName}</span>
-          </Link>
-          <Comments id={data._id}/>
+          <PostInteractions postId={id} />
+          {data.user ? (
+            <Link
+              to={`/${data.user?.username || "#"}`}
+              className="postUser"
+              style={{
+                pointerEvents: data.user ? "auto" : "none",
+                opacity: data.user ? 1 : 0.6,
+              }}
+            >
+              <Image src={data.user?.img || "/general/noAvatar.png"} />
+              <span>{data.user?.displayName || "Unknown User"}</span>
+            </Link>
+          ) : (
+            <div className="postUser">
+              <Image path="/general/noAvatar.png" />
+              <span>Unknown User</span>
+            </div>
+          )}
+          <Comments id={data._id} />
         </div>
       </div>
     </div>

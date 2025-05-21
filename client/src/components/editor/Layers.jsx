@@ -24,7 +24,7 @@ const Layers = () => {
         className={`layer ${selectedLayer === "text" ? "selected" : ""}`}
       >
         <div className="layerImage">
-          <Image src="/general/text.png" alt="" w={48} h={48} />
+          <Image path="/general/text.png" alt="" w={48} h={48} />
         </div>
         <span>Add Text</span>
       </div>

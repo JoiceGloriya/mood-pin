@@ -13,7 +13,7 @@ const GalleryItem = ({ item }) => {
       // gridRowEnd ->shows in vertical axis, where item ends...
     >
 
-      <Image src={item.media} alt="" w={372} h={optimizedHeight}/>
+      <Image path={item.media} alt="" w={372} h={optimizedHeight}/>
       <Link to={`/pin/${item._id}`} className="overlay" />
       <button className="saveButton">Save</button>
       <div className="overlayIcons">
