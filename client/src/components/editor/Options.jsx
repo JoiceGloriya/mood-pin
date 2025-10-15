@@ -79,15 +79,13 @@ const Options = ({ previewImg }) => {
   const [isColorPickerOpen, setSetIsColorPickerOpen] = useState(false);
 
   const originalOrientation =
-    previewImg.width < previewImg.height ? "portrait" : "landscape";
+    previewImg.width < previewImg.height ? "portrait" : "landscape";//Determines if the uploaded image is originally portrait or landscape.
 
-  const handleOrientationClick = (orientation) => {
+  const handleOrientationClick = (orientation) => {//Called when "P" or "L" is clicked.
     let newHeight;
 
     if (
-      // FIXED: SHORTEN
-      // (originalOrientation === "portrait" && orientation === "portrait") ||
-      // (originalOrientation === "landscape" && orientation === "landscape")
+     
       originalOrientation === orientation
     ) {
       newHeight = (375 * previewImg.height) / previewImg.width;
@@ -103,16 +101,11 @@ const Options = ({ previewImg }) => {
     });
   };
 
-  const handleSizeClick = (size) => {
+  const handleSizeClick = (size) => {//Called when a size option is clicked.
     let newHeight;
 
     if (size === "original") {
       if (
-        // FIXED: SHORTEN
-        // (originalOrientation === "portrait" &&
-        //   canvasOptions.orientation === "portrait") ||
-        // (originalOrientation === "landscape" &&
-        //   canvasOptions.orientation === "landscape")
         originalOrientation === canvasOptions.orientation
       ) {
         newHeight = (375 * previewImg.height) / previewImg.width;

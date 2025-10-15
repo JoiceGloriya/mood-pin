@@ -16,7 +16,9 @@ const useEditorStore = create((set) => ({
     backgroundColor: "#008080",
   },
   setSelectedLayer: (newLayer) => set({ selectedLayer: newLayer }),
+
   setTextOptions: (newOptions) => set({ textOptions: newOptions }),
+  
   addText: () =>
     set({
       textOptions: {
@@ -27,8 +29,9 @@ const useEditorStore = create((set) => ({
         left: 0,
       },
     }),
+
   setCanvasOptions: (newOption) => set({ canvasOptions: newOption }),
-  // FIXED: ADD RESET FUNCTION
+ 
   resetStore: () =>
     set({
       selectedLayer: "canvas",

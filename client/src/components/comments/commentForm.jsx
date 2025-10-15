@@ -22,7 +22,7 @@ const CommentForm = ({id}) => {
   const mutation = useMutation({
     mutationFn: addComment,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["comments", id] });//this will refresh the page without actually refreshing it
+      queryClient.invalidateQueries({ queryKey: ["comments", id] });
       setDesc("");
       setOpen(false);//close emoji bar
     },
@@ -31,10 +31,11 @@ const CommentForm = ({id}) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    mutation.mutate({
+    mutation.mutate({// to submit the new commenttt
       description: desc,
       pin: id,
     });
+
   };
   
 

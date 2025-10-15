@@ -13,7 +13,6 @@ const Comment = ({ comment }) => {
         <p className="commentText">
           {comment.description || "No comment text"}
         </p>
-
         <span className="commentTime">{format(comment.createdAt)}</span>
       </div>
     </div>

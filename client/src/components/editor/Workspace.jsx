@@ -21,12 +21,12 @@ const Workspace = ({ previewImg }) => {
         orientation: canvasHeight > 375 ? "portrait" : "landscape",
       });
     }
-  }, [previewImg, canvasOptions, setCanvasOptions]);
+  }, [previewImg, canvasOptions, setCanvasOptions]); //only once when img is mounted
 
   const itemRef = useRef(null);
   const containerRef = useRef(null);
   const dragging = useRef(false);
-  const offset = useRef({ x: 0, y: 0 });
+  const offset = useRef({ x: 0, y: 0 });  // Drag offset from top-left corner
 
   const handleMouseMove = (e) => {
     if (!dragging.current) return;

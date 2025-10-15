@@ -13,7 +13,7 @@ const SearchPage = React.lazy(() => import("./routes/searchPage/searchPage.jsx")
 const AuthPage = React.lazy(() => import("./routes/authPage/authPage.jsx"));
 
 const queryClient = new QueryClient()
-
+const API_URL="https://mern-stack-e9oa.onrender.com"
 
 // import Homepage from "./routes/homepage/HomePage.jsx";
 // import CreatePage from "./routes/createPage/createPage.jsx";
