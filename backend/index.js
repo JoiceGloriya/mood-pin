@@ -14,9 +14,11 @@ const app = express();
 const PORT = 3000;
 
 app.use(cors({
-  origin: "https://mood-pin-e4d2-git-main-joice-gloriyas-projects.vercel.app",
-  credentials: true 
-}));app.use(cookieParser());
+  origin: process.env.CLIENT_URL,
+  credentials: true
+}));
+
+app.use(cookieParser());
 app.use(fileUpload());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
