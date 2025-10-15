@@ -186,6 +186,7 @@ import useEditorStore from "../../utils/editorStore";
 import apiRequest from "../../utils/apiRequest";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import BoardForm from "./BoardForm";
+import Image from "../../components/image/image";
 
 // FIXED: CHANGE DIRECT REQUEST TO MUTATION
 const addPost = async (post) => {
@@ -288,7 +289,7 @@ const CreatePage = () => {
         <div className="createBottom">
           {previewImg.url ? (
             <div className="preview">
-              <img src={previewImg.url} alt="" />
+              <Image path={previewImg.url} alt="" />
               <div className="editIcon" onClick={() => setIsEditing(true)}>
                 <IKImage path="/general/edit.svg" alt="" />
               </div>
